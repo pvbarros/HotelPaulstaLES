@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<html 	xmlns="http://www.w3.org/1999/xhtml"
+    	xmlns:h="http://java.sun.com/jsf/html"
+    	xmlns:f="http://java.sun.com/jsf/core"
+    	xmlns:p="http://primefaces.org/ui"
+    	xmlns:ui="http://java.sun.com/jsf/facelets">
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<link rel="stylesheet" type="text/css" href="css/estilo.css" />
+	<title>Reserva de Quarto | Hotel Paulista Conforto</title>
+</h:head>
+
+<h:body>
+	<h:form>
+	
+	<!-- CABECALHO DO SITE (titulo com o nome do hotel) -->	
+		<div>
+			<ui:insert name="title">
+				<ui:include src="/pattern/title.xhtml" />
+			</ui:insert>
+		</div>
+		
+	<!-- PAINEL DO MENU PRINCIPAL -->
+		<div>
+			<ui:insert name="menuPrincipal">
+				<ui:include src="/pattern/menuPrincipal.xhtml" />
+			</ui:insert>
+		</div>
+
+	<!-- PAINEL DE LOGIN  -->	
+		<div>
+			<ui:insert name="headerLogin">
+				<ui:include src="/pattern/headerLogin.xhtml" />
+			</ui:insert>
+		</div>
+		 		
+ 	<!-- FORM DOS DADOS PARA RESERVA -->	
+ 		<p:growl id="panelTree" showDetail="true" />
+ 		<p:panel widgetVar="panelTree" style="background:#CDC0B0" >
+ 		
+	    	<p:growl id="msgs" showDetail="true" />
+  				<p:panel id="reservarQuarto" header="Reservar Quarto" footer="Hotel Paulista Conforto - Reserva de Quarto" 
+  							style="margin-bottom:20px; font-size:16px; background:#FFFFF0">
+        			<h:panelGrid columns="2" cellpadding="10">
+        				<p:outputLabel value="Check-in:" />
+        				<p:calendar id="calCheckIn" pattern="dd/MM/yyyy" navigator="true" mask="true" 
+        							value="#{valor.dois}" required="true" tabindex="5" />
+        					
+        				<p:outputLabel value="Check-out:"/>				
+        				<p:calendar id="calCheckOut" pattern="dd/MM/yyyy" navigator="true" mask="true" 
+        							value="#{valor.tres}" required="true" tabindex="6"/>
+
+        				<p:outputLabel value="Tipo de Quarto:"/>
+							<p:selectOneMenu id="console" value="#{selectOneMenuView.console}" style="width:125px" tabindex="7">
+            					<f:selectItem itemLabel="Selecione quarto" itemValue="" />
+            					<f:selectItem itemLabel="Solteiro" itemValue="Solteiro" />
+            					<f:selectItem itemLabel="Casal" itemValue="Casal" />
+            					<f:selectItem itemLabel="Presidencial" itemValue="Presidencial" />
+       						 </p:selectOneMenu> 
+       						 
+       					<p:outputLabel value="Quantidade de quartos:"/>
+       					<p:spinner id="spnQuartos" value="#{spinnerView.number3}" min="1" max="20" tabindex="8" />
+       					<p:outputLabel value="Quantidade de hóspedes:"/>
+       					<p:spinner id="spnHospedes" value="#{spinnerView.number3}" min="1" max="20" tabindex="9"/>
+       					
+       				</h:panelGrid>
+       				    <p:commandButton style="font-size:15px" value="Salvar" icon="ui-icon-check" action="#{produtoMB.inserir}" tabindex="10" />
+						<p:commandButton style="font-size:15px" value="Editar" icon="ui-icon-pencil" action="#{produtoMB.atualizar}" tabindex="11" />
+						<p:commandButton style="font-size:15px" value="Pesquisar" icon="ui-icon-search" action="#{produtoMB.pesquisar}" tabindex="12" />
+        				<p:commandButton style="font-size:15px" value="Excluir" icon="ui-icon-trash" action="#{produtoMB.excluir}" tabindex="13" />
+   				 </p:panel>
+
+	    </p:panel>
+		
+	<!-- RODAPE -->
+		<div>
+			<ui:insert name="footer">
+				<ui:include src="/pattern/footer.xhtml" />
+			</ui:insert>
+		</div>
+		
+	</h:form>
+
+</h:body>
+</html>
+

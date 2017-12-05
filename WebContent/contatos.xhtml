@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<html 	xmlns="http://www.w3.org/1999/xhtml"
+    	xmlns:h="http://java.sun.com/jsf/html"
+    	xmlns:f="http://java.sun.com/jsf/core"
+    	xmlns:p="http://primefaces.org/ui"
+    	xmlns:ui="http://java.sun.com/jsf/facelets">
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<link rel="stylesheet" type="text/css" href="css/estilo.css" />
+	<title>Entre em contato conosco | Hotel Paulista Conforto</title>
+</h:head>
+<h:body>
+	
+	<h:form>
+	
+	<!-- CABECALHO DO SITE (titulo com o nome do hotel) -->	
+		<div>
+			<ui:insert name="title">
+				<ui:include src="/pattern/title.xhtml" />
+			</ui:insert>
+		</div>
+		
+	<!-- PAINEL DO MENU PRINCIPAL -->
+		<div>
+			<ui:insert name="menuPrincipal">
+				<ui:include src="/pattern/menuPrincipal.xhtml" />
+			</ui:insert>
+		</div>
+	
+	<!-- PAINEL DE CONTATO COM O HOTEL -->
+	<p:growl id="painelContatoHotel" showDetail="true" />
+ 		<p:panel widgetVar="painelContatoHotel" style="background:#CDC0B0" >
+ 		
+		 	<div class="ui-g">
+		   		<div class="ui-g-12 ui-md-6 ui-lg-3">
+		   			<p:graphicImage value="/img/brand.jpg" style="width:100%"/>
+		   		</div>
+		   		<div class="ui-g-12 ui-md-6 ui-lg-3">
+					<p:outputLabel value="Hotel Paulista Conforto" style="font-variant: small-caps; font-weight:bold; font-size: 30px" 
+									title="Brand Hotel Paulista Conforto"/>
+									
+					<div align="center">
+					<p><p:outputLabel style="font-size:17px" value="Alameda Jaú, 3000, Jardins - São Paulo, SP, Brasil, CEP: 01420-002" title="Endereço"/></p></div>
+					<h:panelGrid columns="1" cellpadding="10">
+						<p:outputLabel value="Formulário de Contato" style="font-weight: bold; font-family:Trebuchet MS; font-size:20px" title="Formulário de Contato"/>
+					</h:panelGrid>
+					
+					<h:panelGrid columns="2" cellpadding="10">
+					
+						<h:outputLabel value="*Selecione um e-mail:" />
+						    <p:selectOneRadio id="contatosHotel" value="#{radioView.contatoEmail2}" layout="responsive" columns="5">
+						        <f:selectItems value="#{radioView.contatos}" var="c" itemLabel="#{contatoEmail}" itemValue="#{contatoEmail}"/>
+						    </p:selectOneRadio>
+    					
+						<h:outputLabel id="lblNomeContatos" for="lblNomeContatos" value="*Seu nome:" title="*Seu nome:"/>
+							<p:inputText id="txtNome" required="true" title="Seu nome" />
+						<h:outputLabel id="lblEmailContatos" for="lblEmailContatos" value="*Seu e-mail:" title="*Seu e-mail:"/>
+							<p:inputText required="true" title="Seu e-mail"/>
+						<h:outputLabel id="lblTelefoneContatos" for="lblTelefoneContatos" value="Telefone:" title="Telefone:"/>
+							<p:inputMask id="mskTelefone" mask="(99)99999-9999" required="false" title="Telefone"/>
+						<h:outputLabel id="lblAssuntoContatos" for="lblAssuntoContatos" value="*Assunto:" title="*Assunto:"/>
+							<p:inputText required="true" maxlength="50" title="Assunto"/>
+						<h:outputLabel id="lblMensagemContatos" for="lblMensagemContatos" value="Mensagem:" title="Mensagem:"/>
+							<p:inputTextarea rows="6" cols="33" title="Mensagem"/>
+							
+						<p:commandButton value="Enviar" icon="ui-icon-check"/>
+					</h:panelGrid>
+
+				</div>
+		    	<div class="ui-g-12 ui-md-6 ui-lg-3"></div>
+			</div>
+		 
+			<div class="ui-g">
+		    	<div class="ui-g-12 ui-md-6 ui-lg-4"></div>
+		    	<div class="ui-g-12 ui-md-6 ui-lg-4"></div>
+		    	<div class="ui-g-12 ui-lg-4"></div>
+			</div>	
+ 		
+ 		</p:panel>
+	
+	<!-- RODAPE -->
+		<div>
+			<ui:insert name="footer">
+				<ui:include src="/pattern/footer.xhtml" />
+			</ui:insert>
+		</div>	
+	
+	
+	</h:form>
+	
+</h:body>
+</html>

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<html 	xmlns="http://www.w3.org/1999/xhtml"
+    	xmlns:h="http://java.sun.com/jsf/html"
+    	xmlns:f="http://java.sun.com/jsf/core"
+    	xmlns:p="http://primefaces.org/ui"
+    	xmlns:ui="http://java.sun.com/jsf/facelets">
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<link rel="stylesheet" type="text/css" href="css/estilo.css" />
+	<title>Hotel Paulista Conforto</title>
+</h:head>
+
+<h:body>
+	<h:form>
+	
+	<!-- CABECALHO DO SITE (titulo com o nome do hotel) -->	
+		<div>
+			<ui:insert name="title">
+				<ui:include src="/pattern/title.xhtml" />
+			</ui:insert>
+		</div>
+		
+	<!-- PAINEL DO MENU PRINCIPAL -->
+		<div>
+			<ui:insert name="menuPrincipal">
+				<ui:include src="/pattern/menuPrincipal.xhtml" />
+			</ui:insert>
+		</div>	
+			
+ 	<!-- AREA DE DESTAQUES DO HOTEL -->
+ 		<p:growl id="painelDestaques" showDetail="true" />
+ 		<p:panel widgetVar="painelDestaques" style="background:#CDC0B0">
+			<div align="center">
+	    	<p><h:outputText style="text-align:center; margin-bottom:10px; helvetica; font-size:18px; color:#000000" 
+	    				value="O Hotel Paulista Conforto tem uma área dedicada ao relaxamento e interatividade dos hóspedes que procuram
+	    						na atividade esportiva manter a saúde e bem-estar. Confira: "/></p></div>
+		
+		    <p:carousel numVisible="1" effect="easeInStrong" headerText="Serviços" style="margin-bottom:px; helvetica; font-size:16px; background-color:#8B7765" 
+		    			circular="true" autoPlayInterval="3200" responsive="true" pageLinks="4">
+		    	<p:tab title="Wifi" >
+		            <h:panelGrid columns="2" cellpadding="10">
+		                <p:graphicImage value="/img/freewifi.jpg" width="400px" height="300px" title="Wifi Free"/>
+		                <h:outputText value="Wi-Fi livre em todas as comodidades do hotel, a partir do hall de entrada e nos quartos reservados pelos hóspedes." />
+		            </h:panelGrid>
+		        </p:tab>
+		        <p:tab title="Restaurante">
+		            <h:panelGrid columns="2" cellpadding="10">
+		                <p:graphicImage value="/img/restaurante.jpg" width="400px" height="300px" title="Restaurante"/>
+		                 <h:panelGrid columns="1" cellpadding="10">
+		                <h:outputText value="Na cidade da gastronomia nosso restaurante tem um delicioso e variado cardápio de comida internacional. Nosso restaurante sempre 
+		                					agrada aos paladares de seus clientes." />
+						<h:outputText style="font-size:12px;" value="*O serviço de quarto funciona das 6:30 a 23:50" />
+						<h:outputText style="font-size:12px;" value="**Consulte-nos sobre horários difereciados no final de ano" />
+					</h:panelGrid>
+		            </h:panelGrid>
+		        </p:tab>
+		        <p:tab title="Academia"  style="background-color:#8B7765">
+		            <h:panelGrid columns="2" cellpadding="10" >
+		                <p:graphicImage value="/img/academia.jpeg" width="400px" height="300px" title="Academia"/>
+		                <h:outputText value="Academia com espaço amplo, organizado e equipamentos modernos." />
+		            </h:panelGrid>
+		        </p:tab>
+		        <p:tab title="Quadra Squash">
+		            <h:panelGrid columns="2" cellpadding="10">
+		                <p:graphicImage value="/img/esportetenis.jpg" width="400px" height="300px" title="Squash"/>
+		                <h:outputText value="Quadra de Squash com piso de madeira (verificar horário disponível)." />
+		            </h:panelGrid>
+		        </p:tab>
+		    </p:carousel>
+			   </p:panel>
+	   
+	   
+	   
+	<!-- RODAPE -->
+	   	<div>
+		<ui:insert name="footer">
+			<ui:include src="/pattern/footer.xhtml" />
+		</ui:insert>
+		</div>
+
+	</h:form>
+
+</h:body>
+</html>

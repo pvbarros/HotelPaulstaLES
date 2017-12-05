@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<html 	xmlns="http://www.w3.org/1999/xhtml"
+    	xmlns:h="http://java.sun.com/jsf/html"
+    	xmlns:f="http://java.sun.com/jsf/core"
+    	xmlns:p="http://primefaces.org/ui"
+    	xmlns:ui="http://java.sun.com/jsf/facelets">
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<link rel="stylesheet" type="text/css" href="css/estilo.css" />
+</h:head>
+<h:body>
+
+	<h:form>
+		
+		<div class="headerLogin">
+			<p:growl id="panelOne" showDetail="true" />	
+				<p:panel id="header_login" header="Login" style="background:#CDC0B0; font-size:16px" >
+        			<h:panelGrid columns="5" cellpadding="10">
+        				<p:outputLabel style="color:#000000" value="Login:" />
+        				<p:inputText tabindex="1"/>
+        				<p:outputLabel style="color:#000000" value="Senha:" />
+        				<p:password id="inputPassword" tabindex="2"/>
+        				<p:commandButton style="font-size:15px" value="Entrar" icon="ui-icon-check" tabindex="3"/>
+       				</h:panelGrid>
+       			</p:panel>	
+		</div>	
+	</h:form>
+
+</h:body>
+</html>

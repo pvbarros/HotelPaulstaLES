@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<html 	xmlns="http://www.w3.org/1999/xhtml"
+    	xmlns:h="http://java.sun.com/jsf/html"
+    	xmlns:f="http://java.sun.com/jsf/core"
+    	xmlns:p="http://primefaces.org/ui"
+    	xmlns:ui="http://java.sun.com/jsf/facelets">
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<link rel="stylesheet" type="text/css" href="css/estilo.css" />
+	<title>Reserva de Quarto | Hotel Paulista Conforto</title>
+</h:head>
+
+<h:body>
+	<h:form>
+	
+	<!-- CABECALHO DO SITE (titulo com o nome do hotel) -->	
+		<div>
+			<ui:insert name="title">
+				<ui:include src="/pattern/title.xhtml" />
+			</ui:insert>
+		</div>
+		
+	<!-- PAINEL DO MENU PRINCIPAL -->
+		<div>
+			<ui:insert name="menuPrincipal">
+				<ui:include src="/pattern/menuPrincipal.xhtml" />
+			</ui:insert>
+		</div>
+
+	<!-- PAINEL DE LOGIN  -->	
+		<div>
+			<ui:insert name="headerLogin">
+				<ui:include src="/pattern/headerLogin.xhtml" />
+			</ui:insert>
+		</div>
+		
+	<!-- RODAPE -->
+		<div>
+			<ui:insert name="footer">
+				<ui:include src="/pattern/footer.xhtml" />
+			</ui:insert>
+		</div>
+	</h:form>
+</h:body>
+</html>

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<html 	xmlns="http://www.w3.org/1999/xhtml"
+    	xmlns:h="http://java.sun.com/jsf/html"
+    	xmlns:f="http://java.sun.com/jsf/core"
+    	xmlns:p="http://primefaces.org/ui"
+    	xmlns:ui="http://java.sun.com/jsf/facelets">
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<link rel="stylesheet" type="text/css" href="css/estilo.css" />
+	<title>Sobre o hotel | Hotel Paulista Conforto </title>
+</h:head>
+<h:body>
+
+	<h:form>
+	
+	<!-- CABECALHO DO SITE (titulo com o nome do hotel) -->	
+		<div>
+			<ui:insert name="title">
+				<ui:include src="/pattern/title.xhtml" />
+			</ui:insert>
+		</div>
+		
+	<!-- PAINEL DO MENU PRINCIPAL -->
+		<div>
+			<ui:insert name="menuPrincipal">
+				<ui:include src="/pattern/menuPrincipal.xhtml" />
+			</ui:insert>
+		</div>
+	
+	<!-- AREA DE ACESSO AO LOGIN -->
+		<div class="acessoLogin">
+			<p:growl id="login" showDetail="false" />
+ 				<p:panel widgetVar="painelLogin" style="background:#CDC0B0">
+
+				<div class="ui-g">
+				<div class="ui-g-12 ui-md-2"><h:outputText value="Hotel Paulista Conforto" style="font-family:Trebuchet MS; font-stretch: condensed"/> </div>
+				    <div class="ui-g-12 ui-md-10 ui-g-nopad">
+				        <div class="ui-g-12 ui-g-nopad">
+				            <div class="ui-g">
+				                <div class="ui-g-12 ui-md-4"></div>
+				                <div class="ui-g-12 ui-md-4"></div>
+				                <div class="ui-g-12 ui-md-4"></div>
+				                <div class="ui-g-12 ui-md-4"></div>
+				            </div>
+				 
+				            <div class="ui-g">
+				                <div class="ui-g-6 ui-md-3"><p:graphicImage value="/img/imglogin1.jpg" style="width:100%" /></div>  
+				                <div class="ui-g-6 ui-md-3"><p:graphicImage value="/img/imglogin2.jpg" style="width:100%" /></div> 
+				                <div class="ui-g-6 ui-md-3"><p:graphicImage value="/img/imglogin3.jpg" style="width:100%" /></div>    
+				                <div class="ui-g-6 ui-md-3"><p:graphicImage value="/img/imglogin4.jpg" style="width:100%" /></div>
+				            </div>
+				 
+				            <div class="ui-g">
+				                <div class="ui-g-12 ui-md-6">
+				                	<h:outputText value="Hotel Paulista Conforto" style="font-weight: bold"/> está localizado à duas quadras da Avenida Paulista, 
+				                	<h:outputText value="próximo ao Metrô Consolação," style="font-weight: bold"/> dispõe de três categorias de apartamentos e espaço para eventos. 
+				                	Para lazer dispomos de uma <h:outputText value="Piscina com Hidromassagem, Sauna Seca, Academia, Quadra de Squash e Estacionamento." 
+				                								style="font-weight: bold"/> </div>
+				                <div class="ui-g-12 ui-md-6">Todos os apartamentos do The Landmark Residence são divididos em Quarto, Sala, Cozinha estilo americana com Frigobar, 
+				                Fogão 2 bocas, Ar condicionado, TV LCD e WI-FI. Há disponibilidade de acomodações para hóspedes com mobilidade reduzida.
+				                </div>
+				
+				            </div>
+				        </div>
+				    </div>
+				</div>
+
+				</p:panel>	
+			</div>
+			
+	<!-- RODAPE -->
+	   	<div>
+		<ui:insert name="footer">
+			<ui:include src="/pattern/footer.xhtml" />
+		</ui:insert>
+		</div>
+		
+	</h:form>
+
+</h:body>
+</html>

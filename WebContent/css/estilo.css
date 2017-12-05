@@ -1,0 +1,31 @@
+@CHARSET "ISO-8859-1";
+body{
+	font-family: "Trebuchet MS", sans-serif;
+	margin: 10px;
+	background-image: url("./../img/bg.png");
+	background-repeat: repeat;
+	background-size: cover;
+	background-size: 70%;
+    bottom: 0;
+    color: black;
+    left: 0;
+    overflow: auto;
+    padding: 3em;
+    position: absolute;
+    right: 0;
+    top: 0;	
+}
+.footer{
+	font-family: "Trebuchet MS", sans-serif;
+	text-align:center;
+	color:#FFFFF0;
+	margin-bottom:10px;
+	padding: 2em;
+	font-weight:bold;
+}
+.acessoLogin{
+	background-repeat: no-repeat;
+	background-size: 500px;
+	background-size: cover;
+}
+
